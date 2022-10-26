@@ -1,0 +1,34 @@
+{% extends "./base.html" %}
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% block body %}
+<center>
+    <article>
+                <p class="animate__animated animate__pulse animate__infinite"
+                    style="font-family: 'Comic Sans MS', sans-serif; font-size: 50px; ">SITU</p><br>
+                <h3>LOGO</h3>
+
+                {% load static %}
+                <img src="{% static 'logo.png' %}" alt="No se encontro imagen no encontrada" width="350" height="220"><br><br>
+                Bienvenido al sistema de prueba de SITU
+                </p>
+
+                <div class="row">
+                    <div class="col-10 m-auto my-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class='card-title'>Elaborado por: </h3>
+                                <hr>
+                                <ul>
+                                    <li>Máximo Andrés Álvarez Pacheco</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </article>        
+    </center>
+{% endblock body %}

@@ -1,0 +1,4 @@
+django
+Pillow
+gunicorn
+whitenoise>=6.0,<7.0
