@@ -3,7 +3,7 @@ from django.db import models
 class Pasajero(models.Model):
 	cedula = models.CharField(max_length=10, blank=False)
 	nombre = models.CharField(max_length=10, blank=False)
-	imagen = models.ImageField(upload_to='static/img/%Y/%m/%d/')
+	imagen = models.ImageField(upload_to='img/%Y/%m/%d/')
 	apellido = models.CharField(max_length=30)
 	email = models.EmailField()
 	def __str__(self):

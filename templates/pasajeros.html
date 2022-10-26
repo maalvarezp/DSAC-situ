@@ -42,7 +42,9 @@
                         <img src="/{{ e.imagen.name }}" alt="{{ e.cedula }}" width="65" height="50"><br>
                         </td>
                         <td>{{e.correo}}</td>
-                        <td><a href="{% url 'pasajerosEdit' e.id %}"  class="btn btn-info">Editar</a></td>
+                        <td>
+                            <a href="{% url 'pasajerosEdit' e.id %}"  class="btn btn-info">Editar</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
