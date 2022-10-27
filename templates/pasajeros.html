@@ -44,8 +44,6 @@
                                 <td>
                                 {% load static %}
                                 <img src="{% static 'logo.png' %}" alt="Imagen no encontrada" width="65" height="50"><br>
-                                <img src="{% static e.imagen.name %}" alt="Imagen no encontrada" width="65" height="50"><br>
-                                <img src="/{{ e.imagen.name }}" alt="{{ e.cedula }}" width="65" height="50"><br>
                                 </td>
                                 <td><a href="{% url 'pasajerosEdit' e.id %}"  class="btn btn-info">Editar</a></td>
                                 <td><a href="{% url 'pasajerosEliminar' e.id %}"  class="btn btn-danger">Eliminar</a></td>
