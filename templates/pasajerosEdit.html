@@ -4,25 +4,29 @@
 {% endblock %}
 
 {% block body %}
-<center>
+<div class="m-auto">
     <article>
         <p class="animate__animated animate__pulse animate__infinite"
         style="font-family: 'Comic Sans MS', sans-serif; font-size: 50px; ">SITU</p><br>
     </article>        
-</center>
-<h2>Gestión de Pasajeros</h2>
-        <div class="card">
-            <div class="card-body">
-                <form action="" method="post" enctype ="multipart/form-data" >
-                    {% csrf_token %}
-                    {{form}}
-                    <hr>
-                    <div class="d-flex justify-content-center">
-                        <input type="reset" value="Cancelar" class="btn btn-secondary">
-                        &nbsp;
-                        <input type="submit" value="Editar" class="btn btn-primary">
-                    </div>
-                </form>
+</div>
+
+<div class="card"> 
+    <div class="card-header">
+        <h1>Gestión de Pasajeros</h1>
+    </div>
+    <div class="card-body container">
+        <form action="" method="post" enctype ="multipart/form-data" >
+            {% csrf_token %}
+            {{form}}
+            <hr>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-secondary mx-2" href="{% url 'pasajeros' %}">
+                    Regresar
+                </a>
+                <input type="submit" value="Guardar" class="btn btn-primary">
             </div>
-        </div>
+        </form>
+    </div>
+</div>
 {% endblock body %}

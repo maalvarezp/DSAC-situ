@@ -23,5 +23,7 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('admin/', admin.site.urls),
     path('pasajeros/', pasajeros, name='pasajeros'),
+    path('pasajerosCrear', pasajerosEdit, name='pasajerosCrear'),
+    path('pasajerosEliminar/<id>', pasajerosEliminar, name='pasajerosEliminar'),
     path('pasajerosEdit/<id>', pasajerosEdit, name='pasajerosEdit')
 ]

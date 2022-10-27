@@ -1,9 +1,10 @@
 from django.db import models
+from django.conf import settings
 
 class Pasajero(models.Model):
 	cedula = models.CharField(max_length=10, blank=False)
 	nombre = models.CharField(max_length=10, blank=False)
-	imagen = models.ImageField('staticfiles/img/%Y/%m/%d/')
+	imagen = models.ImageField(upload_to=(settings.STATIC_ROOT,'/img/%Y/%m/%d/'))
 	apellido = models.CharField(max_length=30)
 	email = models.EmailField()
 	def __str__(self):

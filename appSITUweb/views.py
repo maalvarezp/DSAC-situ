@@ -17,14 +17,24 @@ def pasajeros(request):
             formulario.save()
 
     return render(request,"pasajeros.html",{"pasajeros":pasajeros, 'form':data})
+    
+def pasajerosEliminar(request, id):
+    pasajero = get_object_or_404(Pasajero, id=id)
+    pasajero.delete()
+    return redirect(to="pasajeros")
 
-def pasajerosEdit(request, id):
-    pasajeros = get_object_or_404(Pasajero, id = id)
+def pasajerosEdit(request, id=None):
+    
+    if id:
+        pasajero = get_object_or_404(Pasajero, id = id)
+    else:
+        pasajero = Pasajero()
+    
     data = {
-        'form' : PasajeroFormulario(instance=pasajeros)
+        'form' : PasajeroFormulario(instance=pasajero)
     }
     if request.method == 'POST':
-        formulario = PasajeroFormulario(data=request.POST, instance=pasajeros, files=request.FILES)
+        formulario = PasajeroFormulario(data=request.POST, instance=pasajero, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             return redirect(to="pasajeros")
